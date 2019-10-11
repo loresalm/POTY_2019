@@ -6,7 +6,7 @@ More details.
 """
 
 
-class Run:
+class BinanceData:
 
     client = Client("", "")
     coin = 0
@@ -50,10 +50,10 @@ class Run:
         return self.time
 
 
-testRun = Run('ETHUSDT',
-              '15m',
-              '2018.11.01 00:00:00',
-              '2018.11.03 00:00:00')
+testRun = BinanceData('ETHUSDT',
+                      '15m',
+                       '2018.11.01 00:00:00',
+                       '2018.11.03 00:00:00')
 
 # get api data:
 pricesList = testRun.get_price_list()
