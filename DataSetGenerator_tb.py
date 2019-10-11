@@ -2,8 +2,6 @@
 from BinanceData import BinanceData
 from DataSetGenerator import DataSetGenerator
 
-
-
 testRun = BinanceData('ETHUSDT',
                       '15m',
                        '2018.11.01 00:00:00',
