@@ -1,4 +1,7 @@
 
+import csv
+
+
 class DataSetGenerator:
 
     price = []
@@ -6,17 +9,14 @@ class DataSetGenerator:
     def __init__(self, price):
         self.price = price
 
-    def write_data(self):
+    def write_data(self, name):
 
-        new_file = open('dataSet.txt', 'w')
-        for el in self.price:
-            new_file.write(el)
-            new_file.write('\n')
 
-        new_file.close()
+        with open("./CSVFile/" + name + ".csv", mode='x') as csv_file:
+            csv_writer = csv.writer(csv_file, delimiter=',')
+            csv_writer.writerow(self.price)
 
 
 
-l = [1, 2, 2, 3, 5, 4, 6]
 
-d = DataSetGenerator(l)
+
