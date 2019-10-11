@@ -61,3 +61,4 @@ class BinanceData:
                                                'Taker buy quote asset volume',
                                                'Ignore'])
         self.time_data = pd.to_datetime(self.coin_data['Open time'], unit='ms')
+
