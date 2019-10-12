@@ -15,7 +15,7 @@ class DataSetGenerator:
     def write_data(self, name):
 
 
-        with open("../CSVFile/" + name + ".csv", mode='w') as csv_file:
+        with open("CSVFile/" + name + ".csv", mode='w') as csv_file:
             csv_writer = csv.writer(csv_file, delimiter=',')
             csv_writer.writerow(self.param)
             for i in range(len(self.price)):
