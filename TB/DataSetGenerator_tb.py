@@ -2,6 +2,7 @@
 from BinanceData import BinanceData
 from DataSetGenerator import DataSetGenerator
 
+<<<<<<< HEAD
 import os
 
 import numpy as np
@@ -9,6 +10,8 @@ import pandas as pd
 
 
 
+=======
+>>>>>>> 122bdfedfa3b9c93cf43e38bbab06eb56641b42c
 testRun = BinanceData('ETHUSDT',
                       '15m',
                        '2018.11.01 00:00:00',

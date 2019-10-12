@@ -62,5 +62,3 @@ class BinanceData:
                                                'Ignore'])
         self.time_data = pd.to_datetime(self.coin_data['Open time'], unit='ms')
 
-
-
