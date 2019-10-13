@@ -26,6 +26,7 @@ acc2S= 0
 dataCVSO = []
 dataCVSC = []
 
+
 for i in range(0, (len(dataSetDiff) - (52359%288)), 288):
     L, H, S = FindMaxSubArray().find_maximum_subarray(dataSetDiff, i, i + 288)
     choseData.append(dataSetDiff[L:H + 1])
@@ -39,8 +40,9 @@ for i in range(0, (len(dataSetDiff) - (52359%288)), 288):
             acc2S += np.sum(dataSetDiff[H-91:H+1])
             choseData2.append(dataSetDiff[H-91:H+1])
 
-            dataCVSO.append(dataSet[0][H-91:H+1])
-            dataCVSC.append(dataSet[1][H-91:H+1])
+            dataCVSO.append(dataSet[0][H-91:H +1])
+            dataCVSC.append(dataSet[1][H-91:H +1])
+
 
 
 
@@ -58,17 +60,18 @@ print("len dataset2 (final)=", len(finalData2))
 print("len CSV=", len(dataCVSO))
 print("len CSV C=", len(dataCVSC))
 
+diffFIN= np.array(np.array(dataCVSO) - np.array(dataCVSC))
+print(np.shape(diffFIN[0]))
+diffFIN2= []
+for i in range(len(diffFIN)):
+    diffFIN2.append(np.concatenate((diffFIN[i],['sell']), axis=0))
 
 
 
+print("SHAPE",np.shape(diffFIN2[0]))
 
 
-
-fin = np.array([np.concatenate(dataCVSO), np.concatenate(dataCVSC)])
-print(np.shape(fin))
-
-
-fin2 = DataSetGenerator(fin.T, np.array(['Open', 'Close'])).write_data("D_S_F_FiltredData")
+fin2 = DataSetGenerator(diffFIN2, np.array(range(93))).write_data("D_S_F_FiltredDataSELL")
 
 
 
