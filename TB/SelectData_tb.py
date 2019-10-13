@@ -1,4 +1,3 @@
-
 import SelectData
 from BinanceData import BinanceData
 from DataSetGenerator import DataSetGenerator

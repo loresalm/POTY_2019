@@ -19,6 +19,7 @@ class SelectData:
 
     def save(self, _legend, _fileName):
         data = pd.read_csv(_fileName)
+        print(data)
         select_data = []
         for i in _legend:
             select_data.append(data[i].to_numpy())
@@ -26,6 +27,8 @@ class SelectData:
         return np.asarray(select_data, dtype= float)
 
 
+    def saveAsPd(self, _fileName):
+        return pd.read_csv(_fileName)
 
 
 
