@@ -9,6 +9,7 @@ class KNN:
         self.DataSet = data_set
         # self.labels = data_set[:, len(data_set):]
         self.labels = label
+        #print(len(self.labels), len(self.DataSet))
         self.dist_list = np.zeros(len(data_set))
 
     def distance_list(self, v1):
@@ -20,13 +21,15 @@ class KNN:
         vote_sell = 0
         vote_buy = 0
         dist_sorted = np.argsort(self.dist_list)
-        print(self.dist_list)
 
         for i in range(n):
-            if self.labels[dist_sorted[i]] == 'Sell':
+            if self.labels[dist_sorted[i]] == 'sell':
                 vote_sell += 1
+                #print('sell:',vote_sell)
             else:
+                #print('Buy:',vote_buy)
                 vote_buy += 1
+
         if vote_sell >= vote_buy:
             return 'Sell'
         else:
