@@ -5,7 +5,7 @@ import numpy as np
 
 class SelectData:
 
-    #_legend:  list of what price you want. { ex: x = ['Open', 'Close'] }
+    # _legend:  list of what price you want. { ex: x = ['Open', 'Close'] }
 
     def api(self, _legend, _symbol, _interval, _start_str, _end_str):
 
@@ -25,7 +25,6 @@ class SelectData:
             select_data.append(data[i].to_numpy())
 
         return np.asarray(select_data, dtype= float)
-
 
     def saveAsPd(self, _fileName):
         return pd.read_csv(_fileName)
